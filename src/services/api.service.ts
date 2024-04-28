@@ -20,7 +20,7 @@ export const API_REQUEST: IApiRequest = {
     tv_top_rated: `${base_url}/tv/top_rated?api_key=${api_key}&language=en-US`,
     popular: `${base_url}/movie/popular?api_key=${api_key}&language=en-US`,
     tv_popular: `${base_url}/tv/popular?api_key=${api_key}&language=en-US`,
-    drama: `${base_url}/discover/movie?api_key=${api_key}&language=en-US&with_genre=18`,
+    drama: `${base_url}/discover/movie?include_adult=true&include_null_first_air_dates=false&language=en-US&page=1&sort_by=first_air_date.desc&with_genres&api_key=${api_key}`,
     documentary: `${base_url}/discover/movie?api_key=${api_key}&language=en-US&with_genre=99`,
     comedy: `${base_url}/discover/movie?api_key=${api_key}&language=en-US&with_genre=35`,
     family: `${base_url}/discover/movie?api_key=${api_key}&language=en-US&with_genre=10751`,
