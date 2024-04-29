@@ -4,8 +4,18 @@ import {GetServerSideProps} from "next";
 import {API_REQUEST} from "@/services/api.service";
 import {IMovie} from "@/interfaces/app.interface";
 import {pop} from "@jridgewell/set-array";
+import {useContext} from "react";
+import {AuthContext} from "@/context/auth.context";
+import {useInfoStore} from "@/store";
 
 export default function Home({ trending, topRated, tvTopRated, popular, tvPopular, drama, documentary, family, history }: IHomeProps): JSX.Element {
+    const { setModal, modal } = useInfoStore()
+    const { isLoading } = useContext(AuthContext);
+
+    if (isLoading) {
+        return <>{"Loading..."}</>;
+    }
+
     return (
         <div className="relative min-h-screen">
             <Head>

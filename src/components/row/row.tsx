@@ -30,7 +30,7 @@ const Row = ({ title, movies, isBig = false }: RowProps) => {
             {/* carousel */}
             <div className="group relative md:ml-2">
                 <AiFillCaretLeft
-                    className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-6 w-6 cursor-pointer opacity-0 transition-all duration-300 group-hover:opacity-100 hover:scale-125${!moved && " hidden"}`}
+                    className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-6 w-6 cursor-pointer opacity-0 md:opacity-100 transition-all duration-300 group-hover:opacity-100 hover:scale-125${!moved && " hidden"}`}
                     onClick={() => handleClick("left")}
                 />
                 <div
@@ -42,7 +42,7 @@ const Row = ({ title, movies, isBig = false }: RowProps) => {
                     ))}
                 </div>
                 <AiFillCaretRight
-                    className="absolute top-0 bottom-0 right-2 z-40 m-auto h-6 w-6 cursor-pointer opacity-0 transition-all duration-300 group-hover:opacity-100 hover:scale-125"
+                    className="absolute top-0 bottom-0 right-2 z-40 m-auto h-6 w-6 cursor-pointer opacity-0 md:opacity-100 transition-all duration-300 group-hover:opacity-100 hover:scale-125"
                     onClick={() => handleClick("right")}
                 />
             </div>

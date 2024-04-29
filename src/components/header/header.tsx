@@ -1,11 +1,13 @@
 import Image from "next/image";
-import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
 import { BiBellMinus } from "react-icons/bi";
 import Link from "next/link";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import {AuthContext} from "@/context/auth.context";
 
 const Header = () => {
     const [scrolled, setScrolled] = useState<boolean>(false);
+    const { logout } = useContext(AuthContext);
 
     useEffect(() => {
         const handleScroll = (): void => {
@@ -34,12 +36,15 @@ const Header = () => {
             </div>
 
             <div className="flex items-center space-x-4 text-sm font-light">
-                <AiOutlineSearch className="h-6 w-6 cursor-pointer" />
+                <AiOutlineSearch className="h-6 w-6 cursor-pointer"/>
                 <p className="hidden md:inline">Kids</p>
-                <BiBellMinus className="h-6 w-6 cursor-pointer" />
+                <BiBellMinus className="h-6 w-6 cursor-pointer"/>
                 <Link href={"/account"}>
-                    <AiOutlineUser className="h-6 w-6 cursor-pointer" />
+                    <AiOutlineUser className="h-6 w-6 cursor-pointer"/>
                 </Link>
+                <button onClick={logout}>
+                    <AiOutlineLogout className="h-6 w-6 cursor-pointer"/>
+                </button>
             </div>
         </header>
     )
